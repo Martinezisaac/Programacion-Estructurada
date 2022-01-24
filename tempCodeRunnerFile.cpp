@@ -1,9 +1,12 @@
+//ESTO ES UNA PRUEBA PARA GitHub
+
 #include <iostream>
+#include <stdio.h>
 
 using namespace std;
 
-int main() {
-    cout<<"Hola Mundo" <<endl;
+int main (){
+    cout<<"Esto es una prueba para GutHub \n" <<endl;
+    cout<<"Todo en orden amigo" <<endl;
 
-return 0;
 } //Fin de Main
