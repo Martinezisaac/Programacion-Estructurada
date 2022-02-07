@@ -1,7 +1,7 @@
 /********************PRESENTACION*******************************
 
 NOMBRE: Isaac Martinez
-FECHA: 31/Enero/2022
+FECHA: 08/Febrero/2022
 PROGRAMA: Actividad de programacion 3
 CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
 INGENIERIA EN COMPUTACION / 2DO SEMESTRE
@@ -29,7 +29,7 @@ int main () {
 inicio:
 system("cls");
 
-    cout<<"Selecciona el numero de la accion que deseas realizar:\n" <<endl;
+    cout<<"Selecciona una de las siguientes opciones\n" <<endl;
     cout<<"[1] Mostrar elementos del arreglo"<<endl;
     cout<<"[2] Insertar elementos en el arreglo" <<endl;
     cout<<"[3] Borrar elementos del arreglo" <<endl;
@@ -71,7 +71,6 @@ system("cls");
                     system("cls");
                     goto inicio;
                 }
-
                 else if (u == 50) { //Si el usuario selecciona 2 saldra del programa
                     cout<<"Saliendo del programa..." <<endl;
                     Sleep(2000);
@@ -79,7 +78,6 @@ system("cls");
                     cout<<"Gracias por usar el programa" <<endl;
                     exit(EXIT_SUCCESS); 
                 }
-
                 else { //Si el usuario selecciona cualquier otra opcion que no sea 1 y 2 le marcara error y volvera a preguntar
                     cout<<"Introduzca una opcion correcta" <<endl;
                     Sleep(2000);
@@ -105,7 +103,7 @@ system("cls");
                 }
             cout<<"\n\n";
 
-            cout<<"[1] Insertar un digito en un espacio especifico del arreglo" <<endl;
+            cout<<"[1] Insertar un digito en el arreglo" <<endl;
             cout<<"[2] Volver al menu" <<endl;
             cin>>x;
             system("cls");
@@ -130,7 +128,6 @@ system("cls");
                             if (y>=0 && y<=9) { //Digito introducido valido
                                 cout<<"Que valor desea guardar en el arreglo?" <<endl;
                                 cin>>v;
-
                                     if(v>9) {
                                         system("cls");
                                         cout<<"\nIngrese una cantidad menor a 10" <<endl;
@@ -138,7 +135,6 @@ system("cls");
                                         system("cls");
                                         goto val;
                                     }
-
                                     if (array[y] > 0) {
                                         caseU:
                                         system("cls");
@@ -147,22 +143,19 @@ system("cls");
                                         cout<<"N - No" <<endl;
                                         cin>>u;
                                         system("cls");
-
                                             if (u == 'S' || u == 's') {
                                                 array[y] = v;
-                                                cout<<"El valor \"" <<v <<"\" se ha sobreescribido correctamente" <<endl;
+                                                cout<<"El valor \"" <<v <<"\" se sobrescribio correctamente" <<endl;
                                                 Sleep(2000);
                                                 system("cls");
                                                 goto case2;
                                             }
-
                                             else if (u == 'N' || u == 'n') {
                                                 cout<<"Volviendo al menu para insertar un valor..." <<endl;
                                                 Sleep (2000);
                                                 system ("cls");
                                                 goto case2;
                                             }
-
                                             else {
                                                 cout<<"Ingrese una opcion correcta" <<endl;
                                                 Sleep (2000);
@@ -170,7 +163,6 @@ system("cls");
                                                 goto caseU;
                                             }
                                     }
-
                                     else{
                                         system("cls");
                                         array[y] = v;
@@ -180,7 +172,6 @@ system("cls");
                                         goto case2;
                                     }
                                 }
-
                                 else{
                                     system("cls");
                                     cout<<"Las posiciones del arreglo solamente son del 0 al 9"<<endl;
@@ -189,21 +180,18 @@ system("cls");
                                     goto case3;
                                 }
                         }
-
                 else if (x == 50){
                     cout<<"Volviendo al menu..." <<endl;
                     Sleep(2000);
                     system("cls");
                     goto inicio; 
-                }
-                        
+                }        
                 else{
                     cout<<"Ingrese una opcion correcta" <<endl;
                     Sleep(2000);
                     system("cls");
                     goto case2;
                 }
-
         break;
 
         case 51: //Borrar elementos del arreglo
@@ -238,7 +226,6 @@ system("cls");
                 system ("cls");
                 goto case4; 
             }
-
             else if (x == 50){
 
                 case5:
@@ -263,7 +250,6 @@ system("cls");
                         system("cls");
                         goto case5;
                     }
-
                     else if (y>=0 && y<=9) { //Digito introducido valido
                         array[y] = 0;
                         cout<<"La posicion del arreglo \"" <<y <<"\" ha sido eliminado correctamente" <<endl;
@@ -277,8 +263,7 @@ system("cls");
                 Sleep(2000);
                 system("cls");
                 goto inicio; 
-            }
-                    
+            }        
             else{
                 cout<<"Ingrese una opcion correcta" <<endl;
                 Sleep(2000);
@@ -321,7 +306,6 @@ system("cls");
                             system("cls");
                             goto inicio; 
                             }
-
                         else{ //Digito introducido invalido
                             cout<<"Introduzca una opcion correcta" <<endl;
                             Sleep(2000);
@@ -366,7 +350,6 @@ system("cls");
                             system("cls");
                             goto inicio; 
                             }
-
                         else{ //Digito introducido invalido
                             cout<<"Introduzca una opcion correcta" <<endl;
                             Sleep(2000);
@@ -394,7 +377,7 @@ system("cls");
 
                     int max, min;
                     max = array[0];
-                    min = 100000000000000000;
+                    min = 100;
 
                 for (y=0; y<=9; y++){ //Valor maximo 
                     array[y];
@@ -409,7 +392,7 @@ system("cls");
                 }
 
                 for (y=0; y<10; y++){ //Valor promedio
-                    Acum = Acum+array[y];
+                    Acum = Acum + array[y];
                         if(array[y]>0){
                             cont++;
                         }
@@ -431,7 +414,6 @@ system("cls");
                             system("cls");
                             goto inicio; 
                             }
-
                         else{ //Digito introducido invalido
                             cout<<"Introduzca una opcion correcta" <<endl;
                             Sleep(2000);
