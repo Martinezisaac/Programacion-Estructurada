@@ -18,7 +18,6 @@ DESCRIPCION: Elaborar un programa en donde se realize un arreglo numerico que cu
 #include <iostream>
 #include <stdio.h>
 #include <windows.h>
-#include <algorithm> //Utilizada para encontrar el valor minimo, maximo y promedio del arreglo
 
 using namespace std;
 
