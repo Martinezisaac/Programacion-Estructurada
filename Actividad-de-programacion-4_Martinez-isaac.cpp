@@ -2,7 +2,7 @@
 
 NOMBRE: Isaac Martinez
 FECHA: 08/Febrero/2022
-PROGRAMA: Actividad de programacion 3
+PROGRAMA: Actividad de programacion 4
 CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
 INGENIERIA EN COMPUTACION / 2DO SEMESTRE
 PROFESOR: Sergio Franco Casillas
