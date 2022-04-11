@@ -1,3 +1,19 @@
+/********************PRESENTACION*******************************
+
+NOMBRE: Isaac Martinez
+FECHA: 05/Abril/2022
+PROGRAMA: Actividad de programacion 11
+CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
+INGENIERIA EN COMPUTACION / 2DO SEMESTRE
+PROFESOR: Sergio Franco Casillas
+DESCRIPCION: Realizar un programa que tenga las siguientes caracteristicas:
+            -Realizar el juego de las Torres de Hanoi
+			-No necesita ser gráfico, puede ser textual
+			-Al menos debe tener 5 discos, con la posibilidad de agregar más, máximo 10
+			-Debe contabilizar los movimientos
+
+**************************************************************/
+
 #include <iostream>
 #include <stdio.h>
 #include <windows.h>
