@@ -57,11 +57,11 @@ inicio:
             cout<<"Repeticiones del programa: " <<Acum <<endl;
             cout<<"Gracias por usar el programa" <<endl;
             exit(EXIT_SUCCESS);
-        }
+        } //Fin de if
 
         else if (i==78 || i==110){
             goto inicio;
-        }
+        } //Fin de else if
         
         else
             cout<<"Ingrese un caracter valido" <<endl;
