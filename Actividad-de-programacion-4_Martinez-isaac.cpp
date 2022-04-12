@@ -41,7 +41,7 @@ system("cls");
     system("cls");
 
     switch(i) 
-    { 
+    { //Inicio de switch
         case 49: //Mostrar elementos del arreglo
         cout<<"Usted ingreso a la opcion 1 correctamente" <<endl;
         Sleep(2000);
