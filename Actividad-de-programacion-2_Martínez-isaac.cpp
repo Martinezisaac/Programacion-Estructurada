@@ -29,7 +29,7 @@ int main(){
     printf("-\rRetorno de carro, ");//Retorno de carro
     printf("Esto es un ejemplo del retorno de carro \n");
 
-    //Cadenas de control de tipo de salida
+    /*Cadenas de control de tipo de salida*/
     printf("\nA continuacion, las cadenas de control de tipo de salida\n");
     printf("Ingrese un numero con decimal: ");
     scanf("%g",&h); //Dato real (flotante/float)
