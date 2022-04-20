@@ -371,7 +371,7 @@ system("cls");
 
                 } //Fin de switch "o"
             system("cls");
-            MiniMenu(); //Mostrar Marcador y tablero de posiciones
+            MiniMenu1VS1(); //Mostrar Marcador y tablero de posiciones
             Tablero(); //Mostrar la jugada realizada por J1
 
             //VALIDACIONES PARA GANAR (o)
