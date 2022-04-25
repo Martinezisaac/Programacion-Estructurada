@@ -22,7 +22,7 @@ DESCRIPCION: Realizar un programa que tenga las siguientes caracteristicas:
 using namespace std;
 
 //VARIABLES GLOBALES
-int Gamemode, x, o, ContJ = 0, ContCPU = 0, ContJ1 = 0, ContJ2 = 0, ContC = 0, Val, Acum = 0; //Modo de juego, jugador x, jugador o, contadores
+int Gamemode, x, o, ContJ = 0, ContCPU = 0, ContJ1 = 0, ContJ2 = 0, Val, Acum = 0; //Modo de juego, jugador x, jugador o, contadores
 char Menu, CPU, J[100], J1[100], J2[100]; //Insertar Jugadores
 char Gato[3][3] = {{0}}; //Matriz de 3 Columnas y 3 filas
 
@@ -77,7 +77,7 @@ system("cls");
         case 1: //Un jugador (Contra la computadora)
         Cargando();
         Reiniciar(); //Reiniciar tablero
-        ContJ1 = 0; ContC = 0; //Reiniciar contadores
+        ContJ = 0; ContCPU = 0; //Reiniciar contadores
 
         //PEDIR NOMBRE DE JUGADOR
         gotoxy(49,13); cout<<"[x] JUGADOR: ";
@@ -779,7 +779,6 @@ system("cls");
                     else{
                         Predeterminado(); goto VaJ1;
                     } //Fin de else de mensaje predeterminado
-
         break; //Fin de case 2 (Multijugador)
 
         case 3:
