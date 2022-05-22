@@ -1,8 +1,4 @@
 #include <iostream>
-
-using namespace std;
-
-#include <iostream>
 #include <stdio.h>
 #include <windows.h>
 
@@ -57,6 +53,21 @@ void Presentacion(){
     system("cls"); //Limpiar pantalla
 } //Fin de la presentacion
 
+void Calculadora(){
+    gotoxy (73,12); cout<<" ___________________ " <<endl;
+    gotoxy (73,13); cout<<"|                   |" <<endl;
+    gotoxy (73,14); cout<<"|  cout<<'HiWorld'  |" <<endl;
+    gotoxy (73,15); cout<<"|___________________|" <<endl;
+    gotoxy (73,16); cout<<"|  _______________  |" <<endl;
+    gotoxy (73,17); cout<<"|                   |" <<endl;
+    gotoxy (73,18); cout<<"|   7     8     9   |" <<endl;
+    gotoxy (73,19); cout<<"|                   |" <<endl;
+    gotoxy (73,20); cout<<"|   4     5     6   |" <<endl;
+    gotoxy (73,21); cout<<"|                   |" <<endl;
+    gotoxy (73,22); cout<<"|   1     2     3   |" <<endl;
+    gotoxy (73,23); cout<<"|___________________|" <<endl;
+} //Fin de la presentacion calculadora
+
 //FUNCION PARA DORMIR Y RESETEAR PANTALLA
 void Windows(){
 	Sleep(3000);
@@ -72,7 +83,7 @@ void VolverMenu(){
 
 //FUNCION DE MENSAJE PREDETERMINADO
 void Predeterminado(){ //Funcion de validacion tipo caracter
-    gotoxy(24,22); cout<<"Ingrese una opcion valida"; Puntos();
+    cout<<"Ingrese una opcion valida"; Puntos();
     //goto Op;
 } //Fin de la funcion
 
