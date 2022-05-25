@@ -4,14 +4,6 @@
 
 using namespace std;
 
-//LIBRERIA DE MENSAJES
-void Puntos();
-void Windows();
-void Predeterminado();
-void Salir();
-void Cargando();
-void Volver();
-
 //FUNCION GOTOXY
 void gotoxy(int x,int y){
       HANDLE hcon;
