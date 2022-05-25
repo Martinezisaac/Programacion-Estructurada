@@ -43,8 +43,7 @@ float Potencia(float Num1, float Potencia){
 	float Acumulador, Respuesta;
     Acumulador = 1; //Reiniciar valor del acumulador
         for(int x=1; x<=Potencia; x++){ //Repite la operacion hasta el numero de la potencia
-            Respuesta = Acumulador * Num1; //Operacion
-            Acumulador = Respuesta; //Guarda el resultado en un acumulador para despues volver a hacer operaciones con ese resultado
+            Acumulador = Acumulador * Num1; //Operacion
         } //Fin de algoritmo potencia
-    return Acumulador = Respuesta; //Iguala variables para escribir el resultado (Ans)
+    return Acumulador; //Iguala variables para escribir el resultado (Ans)
 } //Fin de la funcion potencia 
