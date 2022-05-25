@@ -1,11 +1,36 @@
+/********************PRESENTACION*******************************
+
+NOMBRE: Isaac Martinez
+FECHA: 25/Mayo/2022
+PROGRAMA: Proyecto Final
+CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
+INGENIERIA EN COMPUTACION / 2DO SEMESTRE
+PROFESOR: Sergio Franco Casillas
+DESCRIPCION: Elaborar un programa en donde se realicen las siguiente operaciones: 
+             -Calculadora básica - suma, resta, multiplicación, división, raíz cuadrada, potencia (potencia, hacer la función propia)
+             -Convertidor de distancias - 5 opciones, ej: cm, m, millas, yardas, pulgadas, kilómetros, pies.
+             -Convertidor de unidades - Decimal, octal, hexadecimal y binario (recursivos). Decimal a cualquier sistema. Para puntos extras, De cualquier unidad a cualquier unidad
+             -Que las operaciones que realice el usuario las escriba en un archivo de texto y que muestre el contenido del archivo en pantalla.
+             -Debe tener su archivo de librerías
+             -diagrama general del proyecto
+             -Cada función debe tener su función
+
+**************************************************************/
+
 //Librerias
 #include <iostream>
+#include <stdlib.h>
+#include <fstream>
 #include "Calculadora-Basica_Martinez-Isaac.cpp"
 #include "Convertidor-de-Distancias_Martinez-Isaac.cpp"
 #include "Convertidor-de-Unidades_Martinez-Isaac.cpp"
 #include "Libreria-de-Mensajes_Martinez-Isaac.cpp"
 
 using namespace std;
+
+//DECLARAR FUNCIONES
+void EnterBinario();
+void EnterOctal();
 
 //VARIABLES GLOBLALES
 int Menu;
@@ -25,6 +50,7 @@ char MenuCiclo;
 
 int main(){
 Presentacion();
+Abrir(); //Abrir Archivo
 
     Menu: //Menu principal de las calculadoras
     gotoxy(45,9);  cout<<"Seleccione una opcion: " <<endl;
@@ -137,6 +163,7 @@ Presentacion();
                 Calculadora(); //Mostrar calculadora (Diseno)
                 Numero1 = Ans; //El primer numero se iguala al resultado y empieza a hacer ciclo hasta que el usuario desee salir
                 gotoxy(24,23); cout<<"Resultado: " <<Ans; //Impresion del resultado
+                Guardar(Ans); //Imprimir en el archivo txt
                 goto Operacion; //Ciclo hasta que el usuario desee salir
 
             break; //Fin de case 1
@@ -256,6 +283,8 @@ Presentacion();
 
                 } //Fin de switch de la unidad convertida
 
+                Guardar(DistanciaFinal);
+
                 MiniMenu: //Ciclo para mostrar respuesta
                 gotoxy(24,21); cout<<"[1] - Convertir de nuevo mi distancia actual" <<endl;
                 gotoxy(24,22); cout<<"[2] - Reiniciar Calculadora" <<endl;
@@ -315,10 +344,12 @@ Presentacion();
                 switch(MiniMenu){
 
                     case 49:
+                        EnterBinario();
                         gotoxy(74,11); DecimalBinario(Unidad);
                     break;
 
                     case 50:
+                        EnterOctal();
                         gotoxy(74,11); DecimalOctal(Unidad);
                     break;
 
@@ -331,21 +362,21 @@ Presentacion();
                     break;
 
                 } //Fin de switch de Unidades
-                
+
                 MenuCiclo:
                 gotoxy(24,19); cout<<"[1] - Convertir otra unidad" <<endl;
                 gotoxy(24,20); cout<<"[2] - Volver al menu" <<endl;
                 gotoxy(24,21); cout<<"Seleccion: "; cin>>MenuCiclo;
 
                 switch(MenuCiclo){
-                   
+
                     case 49:
                         system("cls");
                         goto ConvertidorDeUnidades;
                     break;
 
                     case 50:
-                        gotoxy(24,24); VolverMenu(); goto Menu; //Funcion de Mensaje predeterminado 
+                        gotoxy(24,24); VolverMenu(); goto Menu; //Funcion de Mensaje predeterminado
                     break;
 
                     default:
@@ -363,7 +394,7 @@ Presentacion();
                         gotoxy(24,15); cout<<"[4] - Volver al Menu" <<endl;
                         goto MenuCiclo;
                     break;
-                    
+
                 } //Fin de switch
 
             break; //Fin de case 3
@@ -377,7 +408,7 @@ Presentacion();
                 goto Menu;
             break; //Fin de case default
 
-        } //Fin de Swtich
+        } //Fin de Switch
 
 return 0;
 } //Fin de main
