@@ -1,3 +1,15 @@
+/********************PRESENTACION*******************************
+
+NOMBRE: Isaac Martinez
+FECHA: 25/Mayo/2022
+PROGRAMA: Proyecto Final
+CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
+INGENIERIA EN COMPUTACION / 2DO SEMESTRE
+PROFESOR: Sergio Franco Casillas
+DESCRIPCION: Libreria de Calculadora Basica (Proyecto Final)
+
+**************************************************************/
+
 #include <iostream>
 #include <math.h>
 
