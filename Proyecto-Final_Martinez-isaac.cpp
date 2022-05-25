@@ -15,12 +15,16 @@ float Acumulador = 1, Ans, Numero1, Numero2;
 char Operacion;
 
 //Variables de Calculadora de Distancias
-char UnidadOriginal, UnidadFinal, MiniMenu;
+int UnidadOriginal, UnidadFinal;
 float Distancia1, DistanciaFinal;
+char MiniMenu;
+
+//Variables de Calculadora de Unidades
+int Unidad;
+char MenuCiclo;
 
 int main(){
-system("cls");
-//Presentacion();
+Presentacion();
 
     Menu: //Menu principal de las calculadoras
     gotoxy(45,9);  cout<<"Seleccione una opcion: " <<endl;
@@ -143,14 +147,14 @@ system("cls");
                 CalculadoraDeDistancias: //Ciclo
                 gotoxy(47,5); cout<<"CONVERTIDOR DE DISTANCIAS" <<endl; //Titulo
                 gotoxy(74,7); cout<<"RESULTADO DE LA CONVERSION" <<endl; //Titulo para mostrar operacion
-                Calculadora(); //Mostrar dise�o de calculadora
+                Calculadora(); //Mostrar diseno de calculadora
                 gotoxy(24,7); cout<<"Ingrese su distancia: ";
                 cin>>Numero1; //Pedir cantidad a convertir
 
                 UnidadOriginal: //Ciclo
                 gotoxy(47,5); cout<<"CONVERTIDOR DE DISTANCIAS" <<endl; //Titulo
                 gotoxy(74,7); cout<<"RESULTADO DE LA CONVERSION" <<endl; //Titulo para mostrar operacion
-                Calculadora(); //Mostrar dise�o de calculadora
+                Calculadora(); //Mostrar diseno de calculadora
 
                 gotoxy(24,9);  cout<<"Ingrese la unidad de su distancia: " <<endl;
                 gotoxy(24,11); cout<<"[1] - Centimetros (cm)" <<endl;
@@ -164,33 +168,34 @@ system("cls");
                 UnidadFinal: //Ciclo
                 gotoxy(47,5); cout<<"CONVERTIDOR DE DISTANCIAS" <<endl; //Titulo
                 gotoxy(74,7); cout<<"RESULTADO DE LA CONVERSION" <<endl; //Titulo para mostrar operacion
-                Calculadora(); //Mostrar dise�o de calculadora
+                Calculadora(); //Mostrar diseno de calculadora
                 switch(UnidadOriginal){ //Convertir toda unidad a Centimetros (cm)
 
-                    case 49: //Centimetros
-                        Distancia1 = Numero1; //Centimetros(cm) a Centimetros(cm)
+                    case 1: //Centimetros
+                        Distancia1 = CMaCM(Numero1); //Centimetros(cm) a Centimetros(cm)
                         gotoxy(24,18); cout<<"Distancia Original = "; cout<<Numero1; cout<<"cm"; //Escribir distancia
                         gotoxy(74,9); cout<<Numero1; cout<<"cm"; gotoxy(74,10); cout<<"="; //Mostrar operacion en pantalla
+                    break;
 
-                    case 50: //Metros
+                    case 2: //Metros
                         Distancia1 = MaCM(Numero1); //Metros(m) a Centimetros(cm)
                         gotoxy(24,18); cout<<"Distancia Original = "; cout<<Numero1; cout<<"m"; //Escribir distancia
                         gotoxy(74,9); cout<<Numero1; cout<<"m"; gotoxy(74,10); cout<<"="; //Mostrar operacion en pantalla
                     break; //Fin de case 2
 
-                    case 51: //Pies
+                    case 3: //Pies
                         Distancia1 = FTaCM(Numero1); //Pies(ft) a Centimetros(cm)
                         gotoxy(24,18); cout<<"Distancia Original = "; cout<<Numero1; cout<<"ft"; //Escribir distancia
                         gotoxy(74,9); cout<<Numero1; cout<<"ft"; gotoxy(74,10); cout<<"="; //Mostrar operacion en pantalla
                     break; //Fin de case 3
 
-                    case 52: //Kilometros
+                    case 4: //Kilometros
                         Distancia1 = KMaCM(Numero1); //Kilometros(km) a Centimetros(cm)
                         gotoxy(24,18); cout<<"Distancia Original = "; cout<<Numero1; cout<<"km"; //Escribir distancia
                         gotoxy(74,9); cout<<Numero1; cout<<"km"; gotoxy(74,10); cout<<"="; //Mostrar operacion en pantalla
                     break; //Fin de case 4
 
-                    case 53: //Millas
+                    case 5: //Millas
                         Distancia1 = MIaCM(Numero1); //Millas(mi) a Centimetros(cm)
                         gotoxy(24,18); cout<<"Distancia Original = "; cout<<Numero1; cout<<"mi"; //Escribir distancia
                         gotoxy(74,9); cout<<Numero1; cout<<"mi"; gotoxy(74,10); cout<<"=";//Mostrar operacion en pantalla
@@ -219,33 +224,33 @@ system("cls");
 
                 switch(UnidadFinal){
 
-                    case 49: //Convertir a Centimetros
+                    case 1: //Convertir a Centimetros
                         gotoxy(24,19); DistanciaFinal = Distancia1; cout<<"Convertir a cm"; //Centimetros(cm) a Centimetros(cm)
                         gotoxy(74,11); cout<<DistanciaFinal; cout<<"cm";//Mostrar Resultado
                     break;
 
-                    case 50: //Convertir a Metros
+                    case 2: //Convertir a Metros
                         gotoxy(24,19); DistanciaFinal = CMaM(Distancia1); cout<<"Convertir a m"; //Centimetros(cm) a Metros(m)
                         gotoxy(74,11); cout<<DistanciaFinal; cout<<"m";//Mostrar Resultado
                     break;
 
-                    case 51: //Convertir a Pies
+                    case 3: //Convertir a Pies
                         gotoxy(24,19); DistanciaFinal = CMaFT(Distancia1); cout<<"Convertir a ft"; //Centimetros(cm) a Pies(ft)
                         gotoxy(74,11); cout<<DistanciaFinal; cout<<"ft";//Mostrar Resultado
                     break;
 
-                    case 52: //Convertir a Kilometros
+                    case 4: //Convertir a Kilometros
                         gotoxy(24,19); DistanciaFinal = CMaKM(Distancia1); cout<<"Convertir a km";//Centimetros(cm) a Kilometros(km)
                         gotoxy(74,11); cout<<DistanciaFinal; cout<<"km";//Mostrar Resultado
                     break;
 
-                    case 53: //Convertir a Millas
+                    case 5: //Convertir a Millas
                         gotoxy(24,19); DistanciaFinal = CMaMI(Distancia1); cout<<"Convertir a mi";//Centimetros(cm) a Millas(mi)
                         gotoxy(74,11); cout<<DistanciaFinal; cout<<"mi";//Mostrar Resultado
                     break;
 
                     default: //Mensaje predetermiando
-                        gotoxy(24,20);Predeterminado();
+                        gotoxy(24,20); Predeterminado();
                         goto UnidadFinal;
                     break; //Fin de case default
 
@@ -279,8 +284,6 @@ system("cls");
                     break;
 
                     default:
-                        //gotoxy(24,26); cout<<"Ingrese una operacion valida"; Puntos();
-                        //gotoxy(24,24); cout<<"Seleccione una opcion valida: ";
                         gotoxy(24,24); cout<<"........... "; Sleep(2500);
                         goto MiniMenu;
                     break;
@@ -294,6 +297,75 @@ system("cls");
             case 3: //Convertidor de Unidades
             Cargando(); //Cargando...
 
+                ConvertidorDeUnidades:
+                gotoxy(47,5); cout<<"CALCULADORA DE UNIDADES" <<endl; //Titulo
+                gotoxy(74,9); cout<<"RESULTADO DE LA CONVERSION" <<endl; //Titulo para mostrar operacion
+                Calculadora(); //Mostrar diseno de calculadora
+
+                gotoxy(24,9); cout<<"Ingrese un cantidad en sistema decimal" <<endl;
+                gotoxy(24,10); cout<<"Unidad: "; cin>>Unidad; //Cantidad en decimal
+
+                gotoxy(24,12); cout<<"[1] - Convertir de Decimal a Binario" <<endl;
+                gotoxy(24,13); cout<<"[2] - Convertir de Decimal a Octal" <<endl;
+                gotoxy(24,14); cout<<"[3] - Convertir de Decimal a Hexadecimal" <<endl;
+                gotoxy(24,15); cout<<"[4] - Volver al Menu" <<endl;
+                gotoxy(24,16); cout<<"Seleccion: ";
+                cin>>MiniMenu;
+
+                switch(MiniMenu){
+
+                    case 49:
+                        gotoxy(74,11); DecimalBinario(Unidad);
+                    break;
+
+                    case 50:
+                        gotoxy(74,11); DecimalOctal(Unidad);
+                    break;
+
+                    case 51:
+                        gotoxy(74,11); DecimalHexadecimal(Unidad);
+                    break;
+
+                    default:
+                        gotoxy(74,11); gotoxy(24,20); Predeterminado();
+                    break;
+
+                } //Fin de switch de Unidades
+                
+                MenuCiclo:
+                gotoxy(24,19); cout<<"[1] - Convertir otra unidad" <<endl;
+                gotoxy(24,20); cout<<"[2] - Volver al menu" <<endl;
+                gotoxy(24,21); cout<<"Seleccion: "; cin>>MenuCiclo;
+
+                switch(MenuCiclo){
+                   
+                    case 49:
+                        system("cls");
+                        goto ConvertidorDeUnidades;
+                    break;
+
+                    case 50:
+                        gotoxy(24,24); VolverMenu(); goto Menu; //Funcion de Mensaje predeterminado 
+                    break;
+
+                    default:
+                        gotoxy(24,23); Predeterminado();
+                        gotoxy(47,5); cout<<"CALCULADORA DE UNIDADES" <<endl; //Titulo
+                        gotoxy(74,9); cout<<"RESULTADO DE LA CONVERSION" <<endl; //Titulo para mostrar operacion
+                        Calculadora(); //Mostrar diseno de calculadora
+
+                        gotoxy(24,9); cout<<"Ingrese un cantidad en sistema decimal" <<endl;
+                        gotoxy(24,10); cout<<"Unidad: ";
+
+                        gotoxy(24,12); cout<<"[1] - Convertir de Decimal a Binario" <<endl;
+                        gotoxy(24,13); cout<<"[2] - Convertir de Decimal a Octal" <<endl;
+                        gotoxy(24,14); cout<<"[3] - Convertir de Decimal a Hexadecimal" <<endl;
+                        gotoxy(24,15); cout<<"[4] - Volver al Menu" <<endl;
+                        goto MenuCiclo;
+                    break;
+                    
+                } //Fin de switch
+
             break; //Fin de case 3
 
             case 4: //Salir del programa
@@ -301,7 +373,7 @@ system("cls");
             break; //Fin de case 4
 
             default: //Mensaje predetermiando
-                Predeterminado();
+                gotoxy(45,12); Predeterminado();
                 goto Menu;
             break; //Fin de case default
 
