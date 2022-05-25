@@ -1,3 +1,15 @@
+/********************PRESENTACION*******************************
+
+NOMBRE: Isaac Martinez
+FECHA: 25/Mayo/2022
+PROGRAMA: Proyecto Final
+CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
+INGENIERIA EN COMPUTACION / 2DO SEMESTRE
+PROFESOR: Sergio Franco Casillas
+DESCRIPCION: Libreria de Libreria de Mensajes (Proyecto Final)
+
+**************************************************************/
+
 #include <iostream>
 #include <stdio.h>
 #include <windows.h>
@@ -81,9 +93,9 @@ void Predeterminado(){ //Funcion de validacion tipo caracter
 
 //FUNCION PARA SALIR DEL PROGRAMA
 void Salir(){
-    cout<<"Saliendo del programa"; Puntos();
+    gotoxy(45,10); cout<<"Saliendo del programa"; Puntos();
     system("cls");
-    cout<<"Usted ha salido correctamente del programa." <<endl;
+    gotoxy(45,12); cout<<"Usted ha salido correctamente del programa." <<endl;
     exit(EXIT_SUCCESS);
 } //Fin de la funcion salir
 
@@ -92,3 +104,43 @@ void Cargando(){
     gotoxy(52,13); cout<<"Cargando"; Puntos();
     system("cls");
 } //Fin de la funcion cargando
+
+void Abrir(){
+    ofstream Archivo; //Crear Archivo
+    Archivo.open("Resultados.txt",ios::out);//Abriendo el archivo
+    if(Archivo.fail()){
+        cout<<"No se pudo crear el archivo...";
+        exit(EXIT_SUCCESS);
+    } //Fin de validacion por si el archivo no abre
+} //Fin de la funcion
+
+void Guardar(float Variable){ //Guardar variables tipo flotante
+    ofstream Archivo; //Crear Archivo
+    Archivo.open("Resultados.txt",ios::app);//Abriendo el archivo
+    Archivo<<"Resultado: " <<Variable; //Imprimir resultado
+    Archivo<<"\n"; //Salto de linea
+} //Fin de la funcion
+
+void EnterBinario(){//Guardar binario
+    ofstream Archivo;
+    Archivo.open("Resultados.txt",ios::app);//Abriendo el Archivo
+    Archivo<<"\nSu numero binario es: ";
+} //Fin de la funcion
+
+void GuardarBinario(float Variable){//Guardar Binario
+    ofstream Archivo;
+    Archivo.open("Resultados.txt",ios::app);//abriendo el archivo
+    Archivo<<Variable;
+} //Fin de la funcion
+
+void EnterOctal(){//Funcion para pasar de linea en Octal
+    ofstream Archivo;
+    Archivo.open("Resultados.txt",ios::app);//Abriendo el archivo
+    Archivo<<"\nSu numero octal es: ";
+} //Fin de la funcion
+
+void GuardarOctal(float Variable){//Guardar Octal
+    ofstream Archivo;
+    Archivo.open("Resultados.txt",ios::app);//Abriendo el archivo
+    Archivo<<Variable;
+} //Fin de la funcion
